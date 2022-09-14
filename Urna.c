@@ -5,9 +5,9 @@ int main()
 {
     char e;
     int v = 0;
-    int cp = 0, cr = 0, cn = 0, cb = 0,tc=0;
-    float pp=0,pr=0,pb=0,pn=0;
-    Inicio:
+    int cp = 0, cr = 0, cn = 0, cb = 0, tc = 0;
+    float pp = 0, pr = 0, pb = 0, pn = 0;
+Inicio:
     while (v >= 0)
     {
     Votacao:
@@ -20,7 +20,10 @@ int main()
         if (e == 's')
         {
             printf("\nEscolheu sim\n--------------------------------------\n");
-             if(v<0){goto Inicio;}
+            if (v < 0)
+            {
+                goto Inicio;
+            }
             switch (v)
             {
             case 5:
@@ -48,10 +51,22 @@ int main()
         }
     }
     tc = (cp + cn + cb + cr);
-    if(cp!=0){pp = 100*((float)cp/tc);}
-    if(cr!=0){pr = 100*((float)cr/tc);}
-    if(cn!=0){pn = 100*((float)cn/tc);}
-    if(cb!=0){pb = 100*((float)cb/tc);}
+    if (cp != 0)
+    {
+        pp = 100 * ((float)cp / tc);
+    }
+    if (cr != 0)
+    {
+        pr = 100 * ((float)cr / tc);
+    }
+    if (cn != 0)
+    {
+        pn = 100 * ((float)cn / tc);
+    }
+    if (cb != 0)
+    {
+        pb = 100 * ((float)cb / tc);
+    }
     printf("A porcentagem de votos para Paulo foi de %.1f\n", pp);
     printf("A porcentagem de votos para Renata foi de %.1f\n", pr);
     printf("A porcentagem de votos em Branco foi de %.1f\n", pb);
