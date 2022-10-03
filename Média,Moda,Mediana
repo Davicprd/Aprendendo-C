@@ -1,0 +1,34 @@
+#include <stdio.h>
+
+int main(){
+    int m[100],v[100],moda = 0,aux;
+    float mediana = 0, media = 0;
+    srand(time(NULL));
+    for (int k = 0;k < 100;k++){
+            m[k] = rand() % 100;
+            v[k] = 0;
+        }
+    for (int k = 0;k < 100;k++){
+            media += m[k];
+            v[m[k]] += 1; 
+        }
+    for (int k = 0;k < 100;k++){
+            if(v[k]>= moda){
+                moda = k;
+            }
+        }
+    for(int f = 0;f<99;f++){
+        for(int k = 0;k<100;k++){
+        if(m[k] < m[f]){
+        aux = m[f];
+        m[f] = m[k];
+        m[k] = aux;
+        }}
+    }
+    mediana = (float)(m[49] + m[50])/2;
+    printf("O valor da média equivale a %2.f",media/100);
+    printf("\nO valor da moda equivale a %d",moda);
+    printf("\nO valor da mediana equivale a %2.f",mediana);
+    return 0;
+}
+
